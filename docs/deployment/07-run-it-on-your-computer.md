@@ -90,10 +90,9 @@ line.
 ### `ADMIN_EMAILS=`
 
 > [!IMPORTANT]
-> The example file ships with the **project authors' email addresses** on
-> this line. **Delete them and put your own** Google account email (the
-> one you'll sign in with). Multiple admins: separate with commas, no
-> spaces — `you@gmail.com,cofounder@gmail.com`.
+> Put **your own** Google account email here (the one you'll sign in
+> with). Multiple admins: separate with commas, no spaces —
+> `you@gmail.com,cofounder@gmail.com`.
 
 This is the first-admin bootstrap
 ([the approval model →](01-what-you-are-about-to-do.md#the-approval-model)):
