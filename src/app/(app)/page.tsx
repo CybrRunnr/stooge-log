@@ -16,7 +16,8 @@ const modules = [
 		icon: VoteIcon,
 		title: "Voting",
 		description: "Anonymous budget-allocation voting to prioritize what's next.",
-		badge: "Phase 3",
+		badge: "Live",
+		href: "/vote",
 	},
 	{
 		icon: TrendingUpIcon,

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { desc, eq } from "drizzle-orm";
 
 import { getDb, schema } from "@/db";
+import { getVoteTally } from "@/server/votes";
 
 import { GameCard } from "./game-card";
 import { ProposeForm } from "./propose-form";
@@ -19,16 +20,20 @@ const SECTIONS: { status: (typeof schema.gameStatus.enumValues)[number]; heading
 
 export default async function BacklogPage() {
 	const db = getDb();
-	const rows = await db
-		.select({
-			game: schema.games,
-			metadata: schema.gameMetadata,
-			proposerName: schema.user.name,
-		})
-		.from(schema.games)
-		.leftJoin(schema.gameMetadata, eq(schema.games.id, schema.gameMetadata.gameId))
-		.leftJoin(schema.user, eq(schema.games.proposedBy, schema.user.id))
-		.orderBy(desc(schema.games.createdAt));
+	const [rows, tally] = await Promise.all([
+		db
+			.select({
+				game: schema.games,
+				metadata: schema.gameMetadata,
+				proposerName: schema.user.name,
+			})
+			.from(schema.games)
+			.leftJoin(schema.gameMetadata, eq(schema.games.id, schema.gameMetadata.gameId))
+			.leftJoin(schema.user, eq(schema.games.proposedBy, schema.user.id))
+			.orderBy(desc(schema.games.createdAt)),
+		getVoteTally(),
+	]);
+	const tallyByGame = new Map(tally.map((entry) => [entry.gameId, entry.totalWeight]));
 
 	return (
 		<div className="flex flex-col gap-8">
@@ -50,6 +55,13 @@ export default async function BacklogPage() {
 			{SECTIONS.map(({ status, heading }) => {
 				const sectionRows = rows.filter((row) => row.game.status === status);
 				if (sectionRows.length === 0) return null;
+				if (status === "backlog") {
+					// Group priority order — what voting is for.
+					sectionRows.sort(
+						(a, b) =>
+							(tallyByGame.get(b.game.id) ?? 0) - (tallyByGame.get(a.game.id) ?? 0)
+					);
+				}
 				return (
 					<section key={status} className="flex flex-col gap-3">
 						<h2 className="text-sm font-medium tracking-wide uppercase">
@@ -65,6 +77,9 @@ export default async function BacklogPage() {
 									game={row.game}
 									metadata={row.metadata}
 									proposerName={row.proposerName}
+									voteTotal={
+										status === "backlog" ? (tallyByGame.get(row.game.id) ?? 0) : undefined
+									}
 								/>
 							))}
 						</div>

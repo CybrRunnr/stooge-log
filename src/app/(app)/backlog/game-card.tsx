@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ClockIcon, GaugeIcon, StarIcon } from "lucide-react";
+import { ClockIcon, GaugeIcon, StarIcon, VoteIcon } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -34,10 +34,13 @@ export function GameCard({
 	game,
 	metadata,
 	proposerName,
+	voteTotal,
 }: {
 	game: Game;
 	metadata: Metadata | null;
 	proposerName: string | null;
+	/** Aggregate group votes — only passed for backlog-status games. */
+	voteTotal?: number;
 }) {
 	const badge = STATUS_BADGE[game.status];
 	const transitions = Object.entries(TRANSITION_LABELS[game.status] ?? {}) as [
@@ -72,6 +75,12 @@ export function GameCard({
 							</Badge>
 						) : (
 							<Badge variant="outline">needs scoring</Badge>
+						)}
+						{voteTotal !== undefined && voteTotal > 0 && (
+							<Badge variant="secondary" className="gap-1">
+								<VoteIcon className="size-3" />
+								{voteTotal} group vote{voteTotal === 1 ? "" : "s"}
+							</Badge>
 						)}
 					</div>
 

@@ -35,12 +35,17 @@ theme system (dark/light), route + server-action stubs, docs.
 - Backlog list grouped by status with art, points/needs-scoring badges,
   genres, review %, proposer, and pitch
 
-## Phase 3 — Voting
+## Phase 3 — Voting ✅ (done)
 
-- Ballot UI: allocate your budget (default 10 pts, max 4/game) across
-  backlog games; shows only your own allocations + remaining budget
-- Backlog ordered by aggregate tally; tally exposed as totals only
-- Votes auto-cleared when a game leaves `backlog` (frees budget)
+- Ballot UI on /vote: optimistic +/− steppers allocate your budget (default
+  10 pts, max 4/game) across backlog games; shows your own allocations +
+  remaining budget, ordered by group priority
+- Backlog section ordered by aggregate tally with a "group votes" badge;
+  tally exposed as totals only (`getVoteTally`)
+- Server-side guards: backlog-status check, per-game cap, budget cap
+  (re-checked against the DB), upsert on (game, user); weight 0 deletes
+- Votes auto-cleared when a game leaves `backlog` (frees budget — done in
+  Phase 2's `transitionGameStatus`)
 
 ## Phase 4 — Dashboard & burn rate
 
