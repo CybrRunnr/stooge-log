@@ -23,3 +23,7 @@ ADMIN_EMAILS=mikewpond@gmail.com,cybrrunnr@proton.me
 # Optional: Discord webhook for group notifications (new proposals,
 # completions, scheduled sessions). Leave empty to disable.
 DISCORD_WEBHOOK_URL=
+
+# Shared secret gating /api/cron (called by the worker's scheduled handler,
+# see custom-worker.ts). Any random string; leave empty to disable cron tasks.
+CRON_SECRET=
