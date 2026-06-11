@@ -1,5 +1,6 @@
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 
+import { sendEventReminders } from "@/server/cron/event-reminders";
 import { refreshStaleMetadata } from "@/server/cron/metadata-refresh";
 
 // Cron task dispatcher. The worker's `scheduled` handler (custom-worker.ts)
@@ -15,6 +16,7 @@ export const dynamic = "force-dynamic";
 // Tasks return a JSON-serializable summary.
 const TASKS: Record<string, () => Promise<Record<string, number>>> = {
 	"refresh-metadata": refreshStaleMetadata,
+	"event-reminders": sendEventReminders,
 };
 
 export async function GET(request: Request): Promise<Response> {
