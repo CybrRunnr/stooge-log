@@ -6,7 +6,7 @@ up, so you never have to memorize anything.
 
 ## The shape of the thing
 
-stooge-log is a **web app**: a program that runs on a computer somewhere on
+Next Quest is a **web app**: a program that runs on a computer somewhere on
 the internet (a *server*) and talks to web browsers. When a friend opens
 the app's address, their browser asks the server for the page, the server
 builds it (reading from a database), and sends it back.
@@ -20,7 +20,7 @@ your friends' browsers
         │
         ▼
 Cloudflare Worker  ←— the app itself, running on Cloudflare's machines
-  (stooge-log)         at https://stooge-log.<your-subdomain>.workers.dev
+  (next-quest)         at https://next-quest.<your-subdomain>.workers.dev
         │
         ▼
 Neon Postgres      ←— the database: games, votes, events, members
@@ -49,7 +49,7 @@ Every Cloudflare account gets a free web address space:
 and your app's address becomes:
 
 ```
-https://stooge-log.<your-subdomain>.workers.dev
+https://next-quest.<your-subdomain>.workers.dev
 ```
 
 > [!NOTE]
@@ -67,7 +67,7 @@ A **connection string** is the database's address, username, and password
 packed into a single line, looking roughly like:
 
 ```
-postgresql://someuser:somepassword@ep-something-pooler.aws.neon.tech/stooge_log?sslmode=require
+postgresql://someuser:somepassword@ep-something-pooler.aws.neon.tech/next_quest?sslmode=require
 ```
 
 Because it contains the password, the connection string is a **secret** —

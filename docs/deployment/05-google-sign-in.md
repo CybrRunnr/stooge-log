@@ -23,15 +23,15 @@ You'll need your **predicted app URL** from
 2. At the top of the page is a **project picker** (it may say "Select a
    project" or show a default project name). Click it, then **New
    project**.
-3. Name it `stooge-log` (no organization needed), click **Create**, and
+3. Name it `next-quest` (no organization needed), click **Create**, and
    wait for the notification that it's done. Make sure the picker now
-   shows `stooge-log` — everything you do next must happen *inside* this
+   shows `next-quest` — everything you do next must happen *inside* this
    project.
 
 ## Configure the consent screen
 
 The consent screen is what your friends see the first time they sign in
-("stooge-log wants to access your Google Account…").
+("Next Quest wants to access your Google Account…").
 
 1. In the console search bar, search for **"OAuth consent screen"** and
    open it. (Google has been reorganizing this area — it may live under a
@@ -39,7 +39,7 @@ The consent screen is what your friends see the first time they sign in
    it asks you to click **Get started** to configure branding first, do
    that — the questions are the same ones below.)
 2. Fill in the basics:
-   - **App name**: `stooge-log` (your friends see this).
+   - **App name**: `next-quest` (your friends see this).
    - **User support email**: your email.
    - **Audience / User type**: **External**. ("Internal" is only for
      companies with Google Workspace.)
@@ -59,7 +59,7 @@ The consent screen is what your friends see the first time they sign in
 >   remember to add each new friend here too.
 > - **Option B — publish the app**: click **Publish app** on the same
 >   page. Anyone with the link can then *attempt* to sign in — which is
->   fine, because stooge-log has its own approval queue: strangers would
+>   fine, because Next Quest has its own approval queue: strangers would
 >   just sit at "pending approval" forever. Since the app requests no
 >   sensitive scopes, publishing does not require Google's review.
 >
@@ -72,7 +72,7 @@ The consent screen is what your friends see the first time they sign in
    Credentials page (under "APIs & Services").
 2. Click **+ Create credentials** → **OAuth client ID**.
 3. **Application type**: **Web application**.
-4. **Name**: `stooge-log` (just a label).
+4. **Name**: `next-quest` (just a label).
 5. Under **Authorized redirect URIs**, click **Add URI** twice and enter
    exactly these two (the first lets you sign in while developing on your
    computer; the second is the live app):
@@ -82,7 +82,7 @@ The consent screen is what your friends see the first time they sign in
    ```
 
    ```
-   https://stooge-log.<your-subdomain>.workers.dev/api/auth/callback/google
+   https://next-quest.<your-subdomain>.workers.dev/api/auth/callback/google
    ```
 
    — replacing `<your-subdomain>` with the one from your scratch note, so

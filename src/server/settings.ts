@@ -10,7 +10,7 @@ export type AppSettings = {
 };
 
 const DEFAULTS: AppSettings = {
-	groupName: "stooge-log",
+	groupName: "Next Quest",
 	voteBudget: 10,
 	voteMaxPerGame: 4,
 	difficultyMultipliers: DEFAULT_DIFFICULTY_MULTIPLIERS,

@@ -27,7 +27,7 @@ for the whole account.
    see it, use the search box at the top and search for "Workers").
 2. The first time you visit, Cloudflare prompts you to **register a
    workers.dev subdomain** — a short name like `mike-pond` or
-   `stooge-squad`. If you're not prompted, look for **"Your subdomain"**
+   `quest-squad`. If you're not prompted, look for **"Your subdomain"**
    on the Workers & Pages overview page (usually in a panel on the right),
    where you can set or see it.
 
@@ -38,19 +38,19 @@ for the whole account.
 
 ## Predict your app's URL
 
-The project's Worker is named `stooge-log` (set in the repo's
+The project's Worker is named `next-quest` (set in the repo's
 `wrangler.jsonc` — don't change it). Cloudflare composes addresses as
 `https://<worker-name>.<your-subdomain>.workers.dev`, so your app's
 address **will be**:
 
 ```
-https://stooge-log.<your-subdomain>.workers.dev
+https://next-quest.<your-subdomain>.workers.dev
 ```
 
 For example, with the subdomain `mike-pond`:
 
 ```
-https://stooge-log.mike-pond.workers.dev
+https://next-quest.mike-pond.workers.dev
 ```
 
 You'll register this address with Google in chapter 05 and store it as a
@@ -101,7 +101,7 @@ It should print the email of your Cloudflare account.
 >
 > - **Your subdomain**: `___________.workers.dev`
 > - **Your app's predicted URL**:
->   `https://stooge-log.<your-subdomain>.workers.dev`
+>   `https://next-quest.<your-subdomain>.workers.dev`
 >   — copy it out in full, with no trailing slash. You will paste it,
 >   character-for-character, in chapters 05 and 08.
 

@@ -1,4 +1,4 @@
-# stooge-log
+# Next Quest
 
 Web application for tracking and coordinating gaming with friends: a shared
 game backlog with point values, anonymous voting to pick what's next,

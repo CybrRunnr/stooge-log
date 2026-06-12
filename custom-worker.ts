@@ -29,7 +29,7 @@ export default {
 		const self: Fetcher | undefined = env.WORKER_SELF_REFERENCE;
 		if (!task || !self) return;
 		ctx.waitUntil(
-			self.fetch(`https://stooge-log.internal/api/cron?task=${task}`, {
+			self.fetch(`https://next-quest.internal/api/cron?task=${task}`, {
 				headers: { "x-cron-secret": secret },
 			})
 		);

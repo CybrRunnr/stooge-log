@@ -5,7 +5,7 @@ each item says how to check it and where to look if it fails.
 
 ## 1. The site loads
 
-Open `https://stooge-log.<your-subdomain>.workers.dev`. You should see the
+Open `https://next-quest.<your-subdomain>.workers.dev`. You should see the
 sign-in page over https.
 
 *If not*: give it a minute after the first deploy, then check the deploy
@@ -53,7 +53,7 @@ only exist on the deployed Worker, and they run on Cloudflare's clock in
 **UTC** — nothing happens immediately after deploying, and nothing ever
 happens when running locally. To confirm they're set up:
 
-1. Cloudflare dashboard → **Workers & Pages** → **stooge-log** →
+1. Cloudflare dashboard → **Workers & Pages** → **next-quest** →
    **Settings** → look for **Triggers** / **Cron Triggers**. You should
    see two schedules: `0 * * * *` (hourly — event reminders) and
    `0 6 * * *` (daily 06:00 UTC — game-info refresh).
@@ -67,19 +67,19 @@ placeholders):
 **Windows (PowerShell)**
 
 ```powershell
-Invoke-WebRequest -Uri "https://stooge-log.<your-subdomain>.workers.dev/api/cron?task=event-reminders" -Headers @{ "x-cron-secret" = "<your-CRON_SECRET>" }
+Invoke-WebRequest -Uri "https://next-quest.<your-subdomain>.workers.dev/api/cron?task=event-reminders" -Headers @{ "x-cron-secret" = "<your-CRON_SECRET>" }
 ```
 
 **macOS**
 
 ```bash
-curl -H "x-cron-secret: <your-CRON_SECRET>" "https://stooge-log.<your-subdomain>.workers.dev/api/cron?task=event-reminders"
+curl -H "x-cron-secret: <your-CRON_SECRET>" "https://next-quest.<your-subdomain>.workers.dev/api/cron?task=event-reminders"
 ```
 
 **Linux**
 
 ```bash
-curl -H "x-cron-secret: <your-CRON_SECRET>" "https://stooge-log.<your-subdomain>.workers.dev/api/cron?task=event-reminders"
+curl -H "x-cron-secret: <your-CRON_SECRET>" "https://next-quest.<your-subdomain>.workers.dev/api/cron?task=event-reminders"
 ```
 
 Expected: a small JSON reply like `{"task":"event-reminders","sent1h":0,"sent24h":0}`

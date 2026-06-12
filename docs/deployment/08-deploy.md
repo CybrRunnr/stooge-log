@@ -41,7 +41,7 @@ npx wrangler secret put CRON_SECRET
 | --- | --- |
 | `DATABASE_URL` | Your Neon connection string — same one as `.dev.vars` |
 | `BETTER_AUTH_SECRET` | The one from chapter 07 (or generate a fresh one with `npx @better-auth/cli secret` — also fine) |
-| `BETTER_AUTH_URL` | **Your predicted app URL** — `https://stooge-log.<your-subdomain>.workers.dev`. `https`, your real subdomain, **no trailing slash** |
+| `BETTER_AUTH_URL` | **Your predicted app URL** — `https://next-quest.<your-subdomain>.workers.dev`. `https`, your real subdomain, **no trailing slash** |
 | `GOOGLE_CLIENT_ID` | From chapter 05 |
 | `GOOGLE_CLIENT_SECRET` | From chapter 05 |
 | `ADMIN_EMAILS` | Your email(s), comma-separated, no spaces |
@@ -75,8 +75,8 @@ This rebuilds the app for Cloudflare's runtime (same build as
 output prints the live address, like:
 
 ```
-Deployed stooge-log triggers (…)
-  https://stooge-log.mike-pond.workers.dev
+Deployed next-quest triggers (…)
+  https://next-quest.mike-pond.workers.dev
   schedule: 0 * * * *
   schedule: 0 6 * * *
 ```

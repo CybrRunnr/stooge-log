@@ -7,6 +7,14 @@ in Neon, completely separate from the code you're replacing
 
 ## The routine
 
+> [!WARNING]
+> If you deployed back when the app was named *stooge-log*, the next
+> `npm run deploy` creates a brand-new Worker called `next-quest` with a
+> new URL: re-run `npx wrangler secret put` for every secret
+> ([chapter 08](08-deploy.md)), update `BETTER_AUTH_URL` and the Google
+> redirect URI to the new address, and delete the old `stooge-log` Worker
+> in the Cloudflare dashboard.
+
 From the project folder:
 
 **All platforms**
@@ -58,7 +66,7 @@ What each step does and what to expect:
 ## Rolling back
 
 If an update breaks something, Cloudflare keeps previous versions:
-dashboard → **Workers & Pages** → **stooge-log** → **Deployments** → pick
+dashboard → **Workers & Pages** → **next-quest** → **Deployments** → pick
 the previous deployment → **Rollback**.
 
 > [!WARNING]

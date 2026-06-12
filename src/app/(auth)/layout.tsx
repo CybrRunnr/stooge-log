@@ -12,7 +12,7 @@ export default function AuthLayout({
 			<header className="flex h-14 items-center justify-between px-4">
 				<span className="flex items-center gap-2 font-semibold tracking-tight">
 					<Gamepad2Icon className="size-5 text-primary" />
-					stooge-log
+					Next Quest
 				</span>
 				<ThemeToggle />
 			</header>

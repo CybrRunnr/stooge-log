@@ -6,7 +6,7 @@
 NEXTJS_ENV=development
 
 # Neon Postgres connection string (pooled HTTP endpoint)
-DATABASE_URL=postgresql://user:password@ep-xxx.neon.tech/stooge_log?sslmode=require
+DATABASE_URL=postgresql://user:password@ep-xxx.neon.tech/next_quest?sslmode=require
 
 # Better Auth — generate a secret with `npx @better-auth/cli secret`
 BETTER_AUTH_SECRET=

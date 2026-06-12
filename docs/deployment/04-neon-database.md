@@ -11,11 +11,11 @@ string** — the single most important secret in this whole setup.
    sign up with the same Google account you use anyway, or email+password.
 2. After signup, Neon asks you to **create a project**. A project is one
    database setup. Fill in:
-   - **Project name**: `stooge-log` (anything works; this is just a label).
+   - **Project name**: `next-quest` (anything works; this is just a label).
    - **Postgres version**: leave the default.
    - **Region**: pick the one closest to where your friend group lives —
      it only affects speed a little.
-   - **Database name**: if it lets you choose, use `stooge_log`
+   - **Database name**: if it lets you choose, use `next_quest`
      (underscore, not hyphen). If it created a default like `neondb`,
      that's fine too — the connection string you copy below carries
      whatever name it has.
@@ -41,7 +41,7 @@ string** — the single most important secret in this whole setup.
 3. Copy the full string. It looks like:
 
    ```
-   postgresql://stooge_log_owner:AbC123xyz@ep-cool-darkness-123456-pooler.us-east-2.aws.neon.tech/stooge_log?sslmode=require
+   postgresql://next_quest_owner:AbC123xyz@ep-cool-darkness-123456-pooler.us-east-2.aws.neon.tech/next_quest?sslmode=require
    ```
 
 4. Confirm it ends with `?sslmode=require`. If yours doesn't, add it to

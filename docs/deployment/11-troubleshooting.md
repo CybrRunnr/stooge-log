@@ -34,7 +34,7 @@ client, and compare the URIs against reality:
 
 - local development needs exactly `http://localhost:3000/api/auth/callback/google`
 - production needs exactly `<your-app-URL>/api/auth/callback/google`, e.g.
-  `https://stooge-log.mike-pond.workers.dev/api/auth/callback/google`
+  `https://next-quest.mike-pond.workers.dev/api/auth/callback/google`
 
 Hunt for the classics: trailing slash, `http` instead of `https`, a typo
 in the subdomain, or a missing `/api/auth/callback/google` path. The error
@@ -68,7 +68,7 @@ only lets listed users through.
 **Fix**: in the Google Cloud console, open the **OAuth consent screen** /
 **Audience** page, then either add the friend's Gmail under **Test
 users**, or click **Publish app** (fine for this app — it requests no
-sensitive scopes, and stooge-log's own approval queue keeps strangers
+sensitive scopes, and Next Quest's own approval queue keeps strangers
 out).
 
 **Prevented in**: [chapter 05](05-google-sign-in.md#configure-the-consent-screen).
@@ -213,7 +213,7 @@ preview is the one known non-issue:
 ## 15. When all else fails: reading the live logs
 
 The deployed app logs every request and error. Cloudflare dashboard →
-**Workers & Pages** → **stooge-log** → **Logs** → begin the live stream,
+**Workers & Pages** → **next-quest** → **Logs** → begin the live stream,
 then reproduce the problem in another tab and watch what appears. Error
 lines usually name the failing piece (database, auth, a specific page) —
 which maps to a chapter of this guide.

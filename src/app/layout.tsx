@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	title: {
-		default: "stooge-log",
-		template: "%s · stooge-log",
+		default: "Next Quest",
+		template: "%s · Next Quest",
 	},
 	description: "Track and coordinate gaming with friends.",
 };

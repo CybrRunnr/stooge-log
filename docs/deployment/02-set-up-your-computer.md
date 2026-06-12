@@ -1,7 +1,7 @@
 # 02 — Set up your computer
 
 By the end of this chapter you'll have a terminal you're comfortable
-opening, Node.js and git installed, and the stooge-log code on your
+opening, Node.js and git installed, and the Next Quest code on your
 machine with its dependencies installed.
 
 ## Open a terminal
