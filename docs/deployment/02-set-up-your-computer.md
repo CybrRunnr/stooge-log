@@ -95,8 +95,8 @@ one):
 **All platforms**
 
 ```bash
-git clone <repo-url>
-cd stooge-log-mega-branch
+git clone https://github.com/CybrRunnr/NextQuest.git
+cd .\NextQuest\
 ```
 
 > [!NOTE]
